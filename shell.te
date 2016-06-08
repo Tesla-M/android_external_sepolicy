@@ -65,6 +65,9 @@ allow shell servicemanager:service_manager list;
 allow shell { service_manager_type -gatekeeper_service }:service_manager find;
 
 # allow shell to look through /proc/ for ps, top
+r_dir_file(shell, proc)
+r_dir_file(shell, proc_net)
+r_dir_file(shell, cgroup)
 allow shell domain:dir { search open read getattr };
 allow shell domain:{ file lnk_file } { open read getattr };
 
