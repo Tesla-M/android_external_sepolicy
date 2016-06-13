@@ -20,6 +20,9 @@ allow system_server dalvikcache_data_file:dir r_dir_perms;
 allow system_server resourcecache_data_file:file r_file_perms;
 allow system_server resourcecache_data_file:dir r_dir_perms;
 
+# hack
+allow system_server overlay_service:service_manager add;
+
 # ptrace to processes in the same domain for debugging crashes.
 allow system_server self:process ptrace;
 
